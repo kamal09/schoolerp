@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head lang="en">
+
+    <title th:text="${title}"></title>
+
+    <th:block th:include="view/fragments/headerinc :: head"></th:block>
+</head>
+<body>
+<div class="container">
+    <th:block th:include="view/fragments/header :: header"></th:block>
+
+    <h2>Student Details</h2>
+    <div>
+        <form class="form-horizontal">
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Student Id:</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static" th:text="${student.studentId}">Student Id</p></div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Name:</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static" th:text="${student.firstName +' ' + student.lastName}" >Name</p></div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Father Name:</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static" th:text="${student.fatherName}">Father Name</p></div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Mother Name:</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static" th:text="${student.motherName}">Mother Name</p></div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Gender:</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static" th:text="${student.gender}">Gender</p></div>
+            </div>
+            <div class="form-group">
+                <label class="col-sm-2 control-label">Date Of Birth:</label>
+                <div class="col-sm-10">
+                    <p class="form-control-static" th:text="${student.dateOfBirth}">Date Of Birth</p></div>
+            </div>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

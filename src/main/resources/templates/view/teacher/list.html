@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <title>Teacher List</title>
+    <th:block th:include="view/fragments/headerinc :: head"></th:block>
+</head>
+<body>
+<div class="container">
+    <th:block th:include="view/fragments/header :: header"></th:block>
+
+    <h2> Teacher List</h2>
+    <table id="teacherTable" class="table table-striped">
+        <tr>
+            <th hidden>Id</th>
+            <th>Teacher Id</th>
+            <th>Name</th>
+            <th>View</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tr th:each="teacher : ${teachers}">
+            <td th:text="${teacher.id}" hidden></td>
+            <!--<td th:text="${student.version}"></td>-->
+            <td th:text="${teacher.teacherId}"></td>
+            <td th:text="${teacher.name}"></td>
+
+            <td><a th:href="${ '/teacher/show/' + teacher.id}">View</a></td>
+            <td><a th:href="${'/teacher/edit/' + teacher.id}">Edit</a></td>
+            <td><a th:href="${'/teacher/delete/' + teacher.id}">Delete</a></td>
+        </tr>
+    </table>
+
+
+</div>
+
+
+</body>
+</html>

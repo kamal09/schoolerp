@@ -4,6 +4,8 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.kamal.schoolerp.schoolerp.entities.Teacher;
 import com.kamal.schoolerp.schoolerp.services.teacher.TeacherService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,6 +20,7 @@ import java.util.Map;
 
 @Controller
 public class TeacherController {
+    private static final Logger LOGGER = LoggerFactory.getLogger(TeacherController.class);
 
     private TeacherService teacherService;
 

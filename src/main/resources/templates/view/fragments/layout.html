@@ -1,0 +1,30 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title data-layout-title-pattern="$DECORATOR_TITLE $CONTENT_TITLE">School Manager | </title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" data-th-href="@{webjars/bootstrap/4.3.1/css/bootstrap.min.css}"/>
+
+</head>
+<body>
+<header>
+    <div data-th-replace="view/fragments/fragment-navbar :: fragment-navbar"></div>
+</header>
+
+
+<div data-layout-fragment="content">
+    <!--Page content goes here-->
+</div>
+
+<!-- FOOTER -->
+<div data-th-replace="view/fragments/fragment-footer :: fragment-footer"></div>
+
+
+
+<script data-th-src="@{webjars/jquery/3.0.0/jquery.min.js}"></script>
+<script data-th-src="@{webjars/bootstrap/4.3.1/js/bootstrap.min.js}"></script>
+</body>
+</html>

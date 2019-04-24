@@ -1,17 +1,13 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org"
-      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-      layout:decorator="view/layouts/main">
+<html data-layout-decorate="~{view/fragments/layout}">
 <head>
 
-    <title>Title</title>
+    <title>HOME</title>
 
-    <link rel="stylesheet" href="css/carousel.css"
-          th:href="@{/css/carousel.css}"/>
+    <link rel="stylesheet" data-th-href="@{/css/carousel.css}"/>
 </head>
 <body>
-<div layout:fragment="content">
+<div data-layout-fragment="content">
 
 
     <div id="myCarousel" class="carousel slide" data-ride="carousel">
@@ -191,7 +187,6 @@
         <!-- /END THE FEATURETTES -->
 
     </div><!-- /.container -->
-
 
 
 </div>

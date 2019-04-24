@@ -2,6 +2,8 @@ package com.kamal.schoolerp.schoolerp.controller;
 
 import com.kamal.schoolerp.schoolerp.entities.Student;
 import com.kamal.schoolerp.schoolerp.services.student.StudentService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -19,6 +21,7 @@ import java.text.SimpleDateFormat;
 
 @Controller
 public class StudentController {
+    private static final Logger LOGGER = LoggerFactory.getLogger(StudentController.class);
 
     private StudentService studentService;
 
@@ -71,7 +74,7 @@ public class StudentController {
     @RequestMapping("student/edit/{id}")
     public String edit(@PathVariable Integer id, Model model) {
         Student student = studentService.getStudentById(id);
-        model.addAttribute("dob",  new SimpleDateFormat("dd/MM/yyyy").format(student.getDateOfBirth()));
+        model.addAttribute("dob", new SimpleDateFormat("dd/MM/yyyy").format(student.getDateOfBirth()));
         model.addAttribute("student", student);
         model.addAttribute("buttonAction", "Update");
         return "view/student/update";
@@ -82,4 +85,5 @@ public class StudentController {
         studentService.deleteStudent(id);
         return "redirect:/student/list";
     }
+
 }

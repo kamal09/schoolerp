@@ -9,37 +9,40 @@
 <div class="container">
     <th:block th:include="view/fragments/header :: header"></th:block>
 
-        <h2><Student></Student> List</h2>
-        <table class="table table-striped">
-            <tr>
-                <th>Id</th>
-                <th>Student Id</th>
-                <th>First Name</th>
-                <th>Last Name</th>
-                <th>Father Name</th>
-                <th>Mother Name</th>
-                <th>Gender</th>
-                <th>Date Of Birth</th>
-                <th>View</th>
-                <th>Edit</th>
-                <th>Delete</th>
-            </tr>
-            <tr th:each="student : ${students}">
-                <td th:text="${student.id}"></td>
-                <!--<td th:text="${student.version}"></td>-->
-                <td th:text="${student.studentId}"></td>
-                <td th:text="${student.firstName}"></td>
-                <td th:text="${student.lastName}"></td>
-                <td th:text="${student.fatherName}"></td>
-                <td th:text="${student.motherName}"></td>
-                <td th:text="${student.gender}"></td>
-                <td th:text="${student.dateOfBirth}"></td>
+    <h2>
+        <Student></Student>
+        List
+    </h2>
+    <table class="table table-striped">
+        <tr>
+            <th>Id</th>
+            <th>Student Id</th>
+            <th>First Name</th>
+            <th>Last Name</th>
+            <th>Father Name</th>
+            <th>Mother Name</th>
+            <th>Gender</th>
+            <th>Date Of Birth</th>
+            <th>View</th>
+            <th>Edit</th>
+            <th>Delete</th>
+        </tr>
+        <tr th:each="student : ${students}">
+            <td th:text="${student.id}"></td>
+            <!--<td th:text="${student.version}"></td>-->
+            <td th:text="${student.studentId}"></td>
+            <td th:text="${student.firstName}"></td>
+            <td th:text="${student.lastName}"></td>
+            <td th:text="${student.fatherName}"></td>
+            <td th:text="${student.motherName}"></td>
+            <td th:text="${student.gender}"></td>
+            <td th:text="${student.dateOfBirth}"></td>
 
-                <td><a th:href="${ '/student/show/' + student.id}">View</a></td>
-                <td><a th:href="${'/student/edit/' + student.id}">Edit</a></td>
-                <td><a th:href="${'/student/delete/' + student.id}">Delete</a></td>
-            </tr>
-        </table>
+            <td><a th:href="${ '/student/show/' + student.id}">View</a></td>
+            <td><a th:href="${'/student/edit/' + student.id}">Edit</a></td>
+            <td><a th:href="${'/student/delete/' + student.id}">Delete</a></td>
+        </tr>
+    </table>
 
 
 </div>

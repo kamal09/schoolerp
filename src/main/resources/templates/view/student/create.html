@@ -1,73 +1,79 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head lang="en">
 
-    <title th:text="${title}"></title>
+<html data-layout-decorate="~{view/fragments/layout}">
 
-    <th:block th:include="view/fragments/headerinc :: head"></th:block>
+<head>
+    <title>Create Student</title>
+    <!--<link rel="stylesheet" data-th-href="@{webjars/bootstrap/4.3.1/css/bootstrap.min.css}"/>-->
+    <link rel="stylesheet" data-th-href="@{webjars/bootstrap/4.3.1/css/b}"/>
 </head>
+
 <body>
-<div class="container">
-    <th:block th:include="view/fragments/header :: header"></th:block>
 
-    <h2>New Student</h2>
+<div data-layout-fragment="content">
 
-    <div>
-        <form class="form-horizontal" th:object="${student}" th:action="@{/student/save}" method="post">
-            <input type="hidden" id="id" name="id"/>
-            <input type="hidden" id="version" name="version"/>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Student ID:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="studentId" name="studentId"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">First Name:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="firstName" name="firstName"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Last Name:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="lastName" name="lastName" />
-                </div>
-            </div>
+    <div class="container">
 
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Father Name:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="fatherName" name="fatherName" />
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Mother Name:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control"  id="motherName" name="motherName"/>
-                </div>
-            </div>
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Gender:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="gender" name="gender"/>
-                </div>
-            </div>
+        <h2>New Student</h2>
 
-            <div class="form-group">
-                <label class="col-sm-2 control-label">Date Of Birth:</label>
-                <div class="col-sm-10">
-                    <input type="text" class="form-control" id="dateOfBirth" name="dateOfBirth"/>
+        <div>
+            <form class="form-horizontal" data-th-object="${student}" data-th-action="@{/student/save}" method="post">
+                <input type="hidden" id="id" name="id"/>
+                <input type="hidden" id="version" name="version"/>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Student ID:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="studentId" name="studentId"/>
+                    </div>
                 </div>
-            </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">First Name:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="firstName" name="firstName"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Last Name:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="lastName" name="lastName"/>
+                    </div>
+                </div>
 
-            <div class="row">
-                <button type="submit" class="btn btn-default"  th:text="${buttonAction}">Submit</button>
-            </div>
-        </form>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Father Name:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="fatherName" name="fatherName"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Mother Name:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="motherName" name="motherName"/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Gender:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="gender" name="gender"/>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Date Of Birth:</label>
+                    <div class="col-sm-10">
+                        <input type="text" class="form-control" id="dateOfBirth" name="dateOfBirth"/>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <button type="submit" class="btn btn-default" data-th-text="${buttonAction}">Submit</button>
+                </div>
+            </form>
+        </div>
+
     </div>
-
 
 </div>
 </body>
+
 </html>

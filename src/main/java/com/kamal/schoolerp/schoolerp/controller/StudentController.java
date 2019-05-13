@@ -40,7 +40,7 @@ public class StudentController {
     @RequestMapping(value = "student/list", method = RequestMethod.GET)
     public String list(Model model) {
         model.addAttribute("students", studentService.listAllStudents());
-        return "view/student/list";
+        return "view/student/list/list";
     }
 
     @RequestMapping("student/show/{id}")
@@ -83,7 +83,7 @@ public class StudentController {
     @RequestMapping("student/delete/{id}")
     public String delete(@PathVariable Integer id) {
         studentService.deleteStudent(id);
-        return "redirect:/student/list";
+        return "redirect:/student/list/list";
     }
 
 }

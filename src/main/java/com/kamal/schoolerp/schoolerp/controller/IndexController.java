@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 public class IndexController {
     private static final Logger LOGGER = LoggerFactory.getLogger(IndexController.class);
 
-    @RequestMapping(value = "/", method = RequestMethod.GET)
+    @RequestMapping(value = "/home/home", method = RequestMethod.GET)
     public String index() {
         try {
             return "/view/home/home";

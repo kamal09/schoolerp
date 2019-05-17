@@ -28,8 +28,8 @@ public class User {
     @Column(name = "mobile")
     private String mobile;
 
-    @Column(name = "status")
-    private String status;
+    @Column(name = "active")
+    private Integer active;
 
 
     @ManyToMany(cascade = CascadeType.ALL)
@@ -85,13 +85,14 @@ public class User {
         this.mobile = mobile;
     }
 
-    public String getStatus() {
-        return status;
+    public Integer getActive() {
+        return active;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
+    public void setActive(Integer active) {
+        this.active = active;
     }
+
 
     public Set<Role> getRoles() {
         return roles;

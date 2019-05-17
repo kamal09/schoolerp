@@ -12,10 +12,10 @@ import org.springframework.web.servlet.ModelAndView;
 public class UserController {
 
     @Autowired
-   private UserService userService;
+    private UserService userService;
 
 
-    @RequestMapping(value = { "/login" }, method = RequestMethod.GET)
+    @RequestMapping(value = {"/login"}, method = RequestMethod.GET)
     public ModelAndView login() {
         ModelAndView modelAndView = new ModelAndView();
         modelAndView.setViewName("view/login/login"); // resources/template/view/login/login.html
@@ -25,8 +25,8 @@ public class UserController {
     @RequestMapping(value = "/register", method = RequestMethod.GET)
     public ModelAndView register() {
         ModelAndView modelAndView = new ModelAndView();
-         User user = new User();
-         modelAndView.addObject("user", user);
+        User user = new User();
+        modelAndView.addObject("user", user);
         modelAndView.setViewName("view/login/register"); // resources/template/view/login/register.html
         return modelAndView;
     }

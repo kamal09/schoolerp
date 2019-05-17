@@ -22,5 +22,6 @@ public class IndexController {
             LOGGER.debug(ex.toString());
         }
         return "/view/home/home";
+
     }
 }

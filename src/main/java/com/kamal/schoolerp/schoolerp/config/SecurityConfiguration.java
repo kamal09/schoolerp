@@ -44,15 +44,15 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 // URLs matching for access rights
 //                .antMatchers("/").permitAll()
                 .antMatchers("/login").permitAll()
-                .antMatchers("/register").permitAll()
-                .antMatchers("/home/**").hasAnyAuthority("SUPER_USER", "ADMIN_USER", "SITE_USER")
+                .antMatchers("/signup").permitAll()
+                .antMatchers("/home/**").hasAnyAuthority("SUPER_ADMIN", "ADMIN", "SITE_USER")
                 .anyRequest().authenticated()
                 .and()
                 // form login
                 .csrf().disable().formLogin()
                 .loginPage("/login")
                 .failureUrl("/login?error=true")
-                .defaultSuccessUrl("/home")
+                .defaultSuccessUrl("/home/home")
                 .usernameParameter("email")
                 .passwordParameter("password")
                 .and()
@@ -66,7 +66,7 @@ public class SecurityConfiguration extends WebSecurityConfigurerAdapter {
                 .tokenValiditySeconds(60*60)
                 .and()
                 .exceptionHandling()
-                .accessDeniedPage("/access-denied");
+                .accessDeniedPage("/access_denied");
     }
 
     @Override
